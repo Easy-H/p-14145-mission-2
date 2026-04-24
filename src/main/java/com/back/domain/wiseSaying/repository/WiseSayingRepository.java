@@ -28,13 +28,12 @@ public class WiseSayingRepository {
 
             for (int i = 0; i < _top; i++) {
                 String content = file.readFile(
-                        "db/wiseSaying/%d.json".formatted(i));
+                        "db/wiseSaying/%d.json".formatted(i + 1));
                 if (content == null) continue;
 
                 Map<String, Object> wise = json.toMap(content);
 
                 if (wise == null) continue;
-
 
                 WiseSayingEntity newWise = new WiseSayingEntity(
                         wise.get("content").toString(),

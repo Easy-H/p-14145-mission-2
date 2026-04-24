@@ -34,14 +34,14 @@ public class WiseSayingController {
 
 
         System.out.print("페이지 : ");
-        for (int i = 0; i <= max - 1; i++) {
+        for (int i = 0; i <= max; i++) {
             if (i == now) {
                 System.out.printf("[%d]", i + 1);
             }
             else {
                 System.out.printf("%d", i + 1);
             }
-            if (i < max - 1) {
+            if (i < max) {
                 System.out.print(" / ");
             }
         }
@@ -70,7 +70,7 @@ public class WiseSayingController {
                     entity.getId(), entity.author, entity.wise);
         }
 
-        printPage(page, (entities.size() + 1) / 5);
+        printPage(page, (entities.size() - 1) / 5);
     }
 
     public void actionWrite() {
